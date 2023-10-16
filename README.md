@@ -15,3 +15,6 @@ El proyecto se contruyó con una de base de datos en memoria para simplificar su
 ## ¿Cómo acceder documentación swagger?
 
 Para accceder a swager acceder http://localhost:10050/nisum-api/ y esta url redirigira a la documentación swagger.
+
+## Adicionales
+En la ruta /src/main/resources/ se puede consultar el archivo Diagramas.png con un diagrama de flujo de la autenticación y un resumido diagrama de clases.
