@@ -19,5 +19,6 @@ Para accceder a swager acceder http://localhost:10050/nisum-api/ y esta url redi
 ## Diagramas de la solución
 En caso de que la imagen a continuación no se pueda ver por favor ir a la ruta /src/main/resources/ donde se puede consultar el archivo Diagramas.png con un diagrama de flujo de la autenticación y un resumido diagrama de clases.
 
-![image](https://github.com/james077/Nisum/assets/28771204/9083ef33-8b48-4cbe-b6cc-a7c17301fb6a)
+![image](https://github.com/james077/Nisum/assets/28771204/9c3ce049-7188-450d-8dbf-33d03ee98afc)
+
 
