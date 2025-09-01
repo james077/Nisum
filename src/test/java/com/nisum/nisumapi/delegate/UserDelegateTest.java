@@ -6,6 +6,7 @@ import com.nisum.nisumapi.delegate.impl.UserDelegate;
 import com.nisum.nisumapi.domain.Phone;
 import com.nisum.nisumapi.domain.User;
 import com.nisum.nisumapi.dto.PhoneDto;
+import com.nisum.nisumapi.dto.UpdateUserDto;
 import com.nisum.nisumapi.dto.UserDto;
 import com.nisum.nisumapi.exception.BusinessException;
 import com.nisum.nisumapi.service.IUserService;
@@ -24,6 +25,7 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
@@ -96,9 +98,20 @@ public class UserDelegateTest {
     @Test
     public void update_whenDataIsCorrect_shouldReturnUserSaved() {
         //Arrange
+        UpdateUserDto updateUserDto = UpdateUserDto.builder()
+                .name("James Martinez C.")
+                .email("jamesmartinez077@gmil.com")
+                .password("P455w0rd*")
+                .phones(Collections.singletonList(PhoneDto.builder()
+                        .number("3214567890")
+                        .citycode("1")
+                        .countrycode("57").build()))
+                .build();
+        when(userService.findByEmail(updateUserDto.getEmail())).thenReturn(userDefaultInputDto);
         when(userService.save(userDefaultInputDto)).thenReturn(userDefaultOutputDto);
+
         //Act
-        ResponseEntity<UserDto> response = userDelegate.update(userDefaultInputDto);
+        ResponseEntity<UserDto> response = userDelegate.update(updateUserDto);
         //Assert
         Assert.assertNotNull(response.getBody());
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);

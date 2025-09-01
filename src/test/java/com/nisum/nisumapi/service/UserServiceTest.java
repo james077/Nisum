@@ -86,7 +86,7 @@ public class UserServiceTest {
         userDefaultOutput.setCreated(LocalDateTime.of(2023,10,15,10,30));
         userDefaultOutput.setModified(LocalDateTime.of(2023,10,15,10,30));
         userDefaultOutput.setLastLogin(LocalDateTime.of(2023,10,15,10,30));
-        userDefaultOutput.setActive(true);
+        userDefaultOutput.setIsActive(true);
     }
 
     @Test
