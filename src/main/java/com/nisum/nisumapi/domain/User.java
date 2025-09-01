@@ -46,7 +46,7 @@ public class User {
     @CreatedDate
     private LocalDateTime lastLogin;
 
-    private boolean isActive;
+    private Boolean isActive;
 
     public void setAllJoins() {
         if (phones != null) {

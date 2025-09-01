@@ -18,19 +18,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserDto {
+public class UpdateUserDto {
 
     private String id;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime created;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime modified;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime lastLogin;
     private String name;
     @Pattern(regexp = GeneralConstants.REGEX_EMAIL, message = ErrorMessages.INVALID_EMAIL)
     private String email;
-    @NotNull(message = "stringValue has to be present")
     private String password;
     private List<PhoneDto> phones;
     private Boolean isActive;

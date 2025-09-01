@@ -6,5 +6,6 @@ public interface IUserService {
 
     UserDto save(UserDto userDto);
     boolean emailExist(String emai);
+    UserDto findByEmail(String email);
 
 }

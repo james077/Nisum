@@ -10,6 +10,7 @@ public class ErrorMessages {
     public static final String INVALID_EMAIL = "Formato de correo inválido";
     public static final String SQL_TRANSACTION = "Error ejecutando la transacción SQL";
     public static final String NOT_CONTROLLED_ERROR = "Error no controlado";
+    public static final String NOT_FOUND_USER = "Usuario no encontrado";
 
 
 }

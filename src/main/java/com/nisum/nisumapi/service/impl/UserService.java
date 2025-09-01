@@ -33,4 +33,9 @@ public class UserService implements IUserService {
         return userRepository.findOneByEmail(email).isPresent();
     }
 
+    @Override
+    public UserDto findByEmail(String email) {
+        return userMapper.entityToDto(userRepository.findOneByEmail(email).orElse(null));
+    }
+
 }
